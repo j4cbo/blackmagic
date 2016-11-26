@@ -124,6 +124,7 @@ bool lpc43xx_probe(target *t)
 		switch (cpuid & 0xFF00FFF0) {
 		case 0x4100C240:
 			t->driver = "LPC43xx Cortex-M4";
+			t->target_options |= CORTEXM_TOPT_INHIBIT_SRST;
 			break;
 		case 0x4100C200:
 			t->driver = "LPC43xx Cortex-M0";
